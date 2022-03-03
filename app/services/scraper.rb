@@ -1,9 +1,10 @@
 class Scraper
-  attr_accessor :driver
+  attr_accessor :driver, :all_articles_urls
 
   def initialize
-    options = Selenium::WebDriver::Firefox::Options.new(args: ['-headless'])
+    options = Selenium::WebDriver::Firefox::Options.new # (args: ['-headless'])
     @driver = Selenium::WebDriver.for(:firefox, options: options)
+    @all_articles_urls = []
   end
 
   def login
@@ -17,8 +18,28 @@ class Scraper
     end
   end
   
+  def get_articles_urls
+    begin
+      self.driver.get ENV["THP_ALL_COURSES_URL"]
+      href_elements = self.driver.find_elements(:tag_name, 'a')
+      href_elements.each do |a|
+        href = a.dom_attribute("href")
+        @all_articles_urls << href.prepend("https://www.thehackingproject.org") if href =~ /fr\/dashboard\/courses\/\d{1,2}\/(lessons|projects)\/\d{1,4}/
+      end
+    rescue => exception
+      puts "Error in get_articles_url() -> #{exception}"
+      kill()
+      return false
+    end
+    @all_articles_urls.count > 0 ? true : false
+  end
+  
   def kill
     self.driver.quit()
   end
 
+  def perform
+    self.login()
+    self.get_articles_urls()
+  end
 end
