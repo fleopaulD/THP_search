@@ -33,6 +33,23 @@ class Scraper
     end
     @all_articles_urls.count > 0 ? true : false
   end
+
+  def get_content(url)
+    article = {}
+    begin
+      self.driver.get url
+      raw_page = self.driver.find_element(:class_name, "card")
+      article[:title] = raw_page.find_element(:class_name, "card-title").text
+      article[:url] = url
+      article[:hash] = raw_page.text.hash.to_s
+      article[:subtitles] = raw_page.find_elements(css: ".card-body h2, .card-body h3, .card-body h4, .card-body h5").map { |a| a.text }
+      article[:contents] = raw_page.find_elements(css: ".card-body p, .card-body li").map { |a| a.text }
+    rescue => exception
+      puts "Error in Scraper.get_content(...) -> #{exception}"
+      kill()
+    end
+    article
+  end
   
   def kill
     self.driver.quit()
