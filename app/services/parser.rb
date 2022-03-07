@@ -13,4 +13,11 @@ class Parser
     cleaned_string.join(" ")
   end
   
+  def word_counter(content)
+    words = {}
+    cleanup_string(content).split(" ").each do |word|
+      words[word].nil? ? words[word] = 1 : words[word] += 1
+    end
+    words  
+  end
 end
