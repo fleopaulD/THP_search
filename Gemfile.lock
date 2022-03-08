@@ -79,6 +79,8 @@ GEM
       dotenv (= 2.7.6)
       railties (>= 3.2)
     erubi (1.10.0)
+    faker (2.20.0)
+      i18n (>= 1.8.11, < 2)
     globalid (1.0.0)
       activesupport (>= 5.0)
     i18n (1.10.0)
@@ -164,6 +166,7 @@ GEM
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
     strscan (3.0.1)
+    table_print (1.5.7)
     thor (1.2.1)
     timeout (0.2.0)
     tzinfo (2.0.4)
@@ -179,11 +182,13 @@ PLATFORMS
 DEPENDENCIES
   debug
   dotenv-rails
+  faker
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.2, >= 7.0.2.2)
   selenium-webdriver (~> 4.0)
   sprockets-rails
+  table_print
   tzinfo-data
 
 RUBY VERSION

@@ -18,6 +18,9 @@ gem "puma", "~> 5.0"
 # Scrap the web
 gem 'selenium-webdriver', '~> 4.0'
 
+# Print formated datas from database
+gem "table_print"
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
@@ -27,6 +30,9 @@ group :development, :test do
 
   # Manage credentials in .env file
   gem 'dotenv-rails'
+
+  # Generate random datas
+  gem "faker"
 end
 
 group :development do
