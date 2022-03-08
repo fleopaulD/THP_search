@@ -3,8 +3,9 @@ class Parser
   
   def cleanup_string(string)
     cleaned_string = []
+    string = string.join(" ") if string.is_a? Array
     string.split(/ |'/) do |word|
-      word = word.downcase.delete('.,:;()!?$=<%>"')
+      word = word.downcase.delete('.,:;()!?$=<%>"0123456789')
       next if word.length < 2
       next if UNWANTED_WORDS.include? word
       next unless word.ascii_only?

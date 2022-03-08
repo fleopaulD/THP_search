@@ -24,4 +24,14 @@ Dir.glob("./db/json/*.json").each do |f|
       word: word_in_db
     )
   end
+
+  Parser.new.cleanup_string(article["subheadings"]).split.uniq.each do |word|
+    word_in_db = Word.find_by(str: word)
+    word_in_db = Word.create(str: word) if word_in_db.nil?
+    Subheading.create(
+      page: page,
+      word: word_in_db
+    )
+  end
+
 end
