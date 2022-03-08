@@ -1,0 +1,34 @@
+{
+  "title":"Découvrir le code avec HTML et CSS",
+  "url":"https://www.thehackingproject.org/fr/dashboard/courses/4/lessons/296",
+  "signature":"1948700003650760359",
+  "subheadings":[
+    "1. Introduction",
+    "2. Historique et contexte",
+    "2.1. HTML - le squelette",
+    "2.2. CSS - l'habillage",
+    "2.3. Le front-end, le back-end",
+    "📚 INSTANT CULTURE GÉ",
+    "3. La ressource",
+    "4. Pour aller plus loin"
+  ],
+  "contents":[
+    "Le projet du jour te demandera de coder ta première page web, yeaaah ! En guise d'outillage, nous te proposons une introduction très légère au HTML / CSS pour te mettre le pied à l'étrier. Tu auras ainsi les bases nécessaires pour attaquer le projet de mise en page de demain 😇",
+    "Qu'est-ce que le HTML, qu'est-ce que le CSS ? Dans cette partie, nous allons voir comment les deux langages sont interdépendants et comment nous nous en servons pour faire du développement Front-end.",
+    "Imaginez que nous souhaitons coder cette page :",
+    "Le HTML va nous permettre de mettre en place la structure, et donc de préciser qu'il y aura : un champ pour remplir son email et son mot de passe, un logo, ainsi qu'un bouton pour se connecter. Voici à quoi ressemblerait notre code :",
+    "En voyant ça, même en n'ayant jamais codé de ta vie, tu peux sûrement deviner que cela concerne un en-tête (header), qu'il y a une img qui s'appelle logo.png (probablement une image qui doit être le logo), qu'il y a des input pour email et password, et la présence d'un button à la fin. Tadaam, ce n'est pas plus compliqué ! Pour les détails, nous verrons ça un peu plus tard.",
+    "Pour l'instant, souviens-toi seulement que le HTML permet de concevoir le squelette d'une page. Par contre, si on s'en contentait, ta page ressemblerait à ça (ce qui n'est pas très funky, soyons honnêtes.) :",
+    "Quel est donc le secret pour donner aux éléments les bonnes couleurs, tailles, et mises en forme ? Le CSS, bien sûr.",
+    "Le CSS permet d'habiller le squelette d'une page en lui donnant la forme et la mise en page que tu veux. Du code CSS, ça ressemble à ça :",
+    "Comme nous l'avons abordé dans la ressource précédente, quand tu vas sur un site, tu fais une requête. Les serveurs vont alors t'envoyer du code HTML/CSS que ton explorateur (Chrome, Firefox, etc) va interpréter. Les serveurs se réfèrent généralement au back-end de ton site, et le code qu'ils envoient, c'est le front-end.",
+    "Tout au long de cette semaine, nous étudierons les bases du front-end et apprendrons à faire des pages web.",
+    "Le code HTML/CSS est envoyé par les serveurs et reçu par ton ordinateur. Ce code peut être lu par n'importe quoi, mais nous utilisons en général un explorateur (ou navigateur) pour le lire et le comprendre (Chrome, Firefox, Safari, Internet Explorer). Figure-toi qu'avec le même code, un explorateur va l'afficher de manière différente. Un peu comme une correction d'une copie de philo au bac : tu peux avoir une note différente en fonction du professeur qui te corrige car il interprète à sa façon les concepts mentionnés.",
+    "D'ailleurs, connais-tu cette fameuse blague qui dit que \"Internet Explorer, c'est de la merde\" ? C'est parce que la version 6 du tristement célèbre navigateur affichait mal beaucoup d'éléments en HTML et CSS.",
+    "Les 2 grands avantages du HTML et du CSS ? C'est avant tout un fantastique point d'entrée dans l'univers du code, et il existe une multitude d'excellents cours pour les apprendre. Nous avons la chance d'être amis avec OpenClassrooms qui proposent le meilleur cours en français sur le HTML / CSS : le célèbre Apprenez à créer votre site web avec HTML5 et CSS3 de Mathieu Nebra qui a fait la gloire du SiteDuZéro.",
+    "Pour cette leçon, nous allons te demander de survoler la track Apprenez à créer votre site web avec HTML5 et CSS3, jusqu'à la partie Le modèle des boîtes. Attention : à THP, ce sont les projets qui comptent, les ressources étant là principalement en guise de soutien pour réaliser les projets. Pas besoin de perdre tout ton temps sur les ressources que l'on donne, le plus important est de plonger et de galérer (en communauté) dans le projet du jour, quitte à revenir sur la ressource pour tel ou tel point. C'est comme cela que tu apprendras : par la pratique et par les projets.",
+    "Tu peux regarder ensuite l'excellente vidéo de Jake Wright intitulée Learn CSS in 12 minutes.",
+    "Pour aller plus loin, nous pouvons te donner le lien pour MDN, acronyme de Mozilla Developer Network, et hôte d'une des ressources les mieux faites concernant le HTML et CSS. Cela peut paraître un peu barbare quand on débute l'informatique, mais ce site est la référence officielle en la matière.",
+    "Mais pas besoin de perdre du temps avec des sites chelou : rien ne vaut la pratique, donc RDV sur le projet du jour !"
+  ]
+}
