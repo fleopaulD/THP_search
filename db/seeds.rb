@@ -8,16 +8,20 @@
 
 Word.destroy_all
 Page.destroy_all
+Title.destroy_all
 
-1000.times do
-  Word.create(
-    str: Faker::Lorem.word
+Dir.glob("./db/json/*.json").each do |f|
+  article = JSON.parse(File.read(f))
+  page = Page.create(
+    url: article["url"],
+    signature: article["signature"]
   )
-end
-
-300.times do
-  Page.create(
-    url: Faker::Internet.url(host: 'thehackingproject.org'),
-    signature: Faker::Internet.password
-  )
+  Parser.new.cleanup_string(article["title"]).split do |word|
+    word_in_db = Word.find_by(str: word)
+    word_in_db = Word.create(str: word) if word_in_db.nil?
+    Title.create(
+      page: page,
+      word: word_in_db
+    )
+  end
 end
