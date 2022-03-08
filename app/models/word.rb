@@ -6,7 +6,7 @@ class Word < ApplicationRecord
   has_many :pages, through: :subheadings
 
   has_many :contents
-  has_many :pages, through: :pages
+  has_many :pages, through: :contents
 
-  validates :str, presence: true, uniqueness: true, length: {maximum: 50}    
+  validates :str, presence: true, uniqueness: true, length: {maximum: 255}    
 end

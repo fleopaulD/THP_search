@@ -5,10 +5,9 @@ class Parser
     cleaned_string = []
     string = string.join(" ") if string.is_a? Array
     string.split(/ |'/) do |word|
-      word = word.downcase.delete('.,:;()!?$=<%>"0123456789')
+      word = word.downcase.gsub(/[^[:alpha:]]/, '').gsub(/[éèëê]/, 'e').gsub(/[àâä]/, 'a')
       next if word.length < 2
       next if UNWANTED_WORDS.include? word
-      next unless word.ascii_only?
       cleaned_string << word
     end
     cleaned_string.join(" ")
@@ -19,6 +18,6 @@ class Parser
     cleanup_string(content).split(" ").each do |word|
       words[word].nil? ? words[word] = 1 : words[word] += 1
     end
-    words  
+    words
   end
 end

@@ -15,6 +15,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_07_123747) do
   enable_extension "plpgsql"
 
   create_table "contents", force: :cascade do |t|
+    t.integer "count"
     t.bigint "word_id"
     t.bigint "page_id"
     t.index ["page_id"], name: "index_contents_on_page_id"

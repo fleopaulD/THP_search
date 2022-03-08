@@ -9,8 +9,15 @@
 Word.destroy_all
 Page.destroy_all
 Title.destroy_all
+Subheading.destroy_all
+Content.destroy_all
 
-Dir.glob("./db/json/*.json").each do |f|
+json_files = Dir.glob("./db/json/*.json")
+
+json_files.each_with_index do |f, index|
+  
+  print "File [#{"%04d" % (index+1)}/#{"%04d" % json_files.count}] : #{}"
+  
   article = JSON.parse(File.read(f))
   page = Page.create(
     url: article["url"],
@@ -25,6 +32,8 @@ Dir.glob("./db/json/*.json").each do |f|
     )
   end
 
+  print "title=OK "
+
   Parser.new.cleanup_string(article["subheadings"]).split.uniq.each do |word|
     word_in_db = Word.find_by(str: word)
     word_in_db = Word.create(str: word) if word_in_db.nil?
@@ -33,5 +42,19 @@ Dir.glob("./db/json/*.json").each do |f|
       word: word_in_db
     )
   end
+
+  print "subheadings=OK "
+
+  Parser.new.word_counter(article["contents"]).each do |key, value|
+    word_in_db = Word.find_by(str: key)
+    word_in_db = Word.create(str: key) if word_in_db.nil?
+    Content.create(
+      page: page,
+      word: word_in_db,
+      count: value
+    )
+  end
+  
+  puts "contents=OK"
 
 end
