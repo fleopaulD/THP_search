@@ -12,7 +12,7 @@ puts "Destroying [contents] table..."
 Content.destroy_all
 puts ""
 
-json_files = Dir.glob("./db/json/*.json")
+json_files = Dir.glob(Rails.root.join("db", "json", "*.json"))
 
 json_files.each_with_index do |f, index|
   
