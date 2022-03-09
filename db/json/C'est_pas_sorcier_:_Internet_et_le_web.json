@@ -1,0 +1,37 @@
+{
+  "title":"C'est pas sorcier : Internet et le web",
+  "url":"https://www.thehackingproject.org/fr/dashboard/courses/4/lessons/293",
+  "signature":"-2976318584677017803",
+  "subheadings":[
+    "1. Introduction",
+    "2. Historique et contexte",
+    "3. La ressource",
+    "3.1. Le web",
+    "3.2. Le client, le serveur",
+    "4. Pour aller plus loin"
+  ],
+  "contents":[
+    "Avant de te lancer dans la programmation de sites internet, nous allons te montrer comment internet marche (ça peut être utile, n'est-ce pas ?).",
+    "Internet tel qu'on le connait aujourd'hui a été inventé en 1991 par un certain Tim Berners-Lee. Ce gars-là est à l'origine de la troisième révolution industrielle. Tranquille, quoi...",
+    "Voici quelques vidéos pour t'aider à mieux comprendre comment marche internet :",
+    "Pour commencer, regarde cette vidéo de BlueHost sur le fonctionnement de base des sites internet.",
+    "Continue avec cette vidéo de Rémi Explique, qui donne un bon aperçu des sites internet en utilisant la métaphore bien choisie du courrier postal.",
+    "Finis avec cette vidéo du très célèbre CS50 de Harvard qui explique le protocole HTTP.",
+    "Quand tu as terminé, nous te proposons de suivre les premiers chapitres de l'excellent cours de Mathieu Nebra : Comprendre le Web :",
+    "Introduction",
+    "Définissez le web",
+    "Distinguez le web et internet",
+    "Retracez l’histoire du web",
+    "En résumé",
+    "Tu as pu voir ces expressions : qu'est-ce que le client, qu'est-ce que le serveur ?",
+    "Quand ton ordinateur va sur un site, ce dernier va faire une requête sur les serveurs du site. par exemple, lorsque tu vas sur google.com, tu vas envoyer une requête aux serveurs de Google. Ces derniers vont vérifier si la requête est bonne. Il y a deux cas de figure :",
+    "La requête est bonne : les serveurs vont te renvoyer une réponse. Cette réponse est généralement un fichier html que le client* (le navigateur de la personne ayant utilisé le site) va interpréter",
+    "La requête n'est pas bonne : les serveurs vont renvoyer un message d'erreur et un code d'erreur associé (4xx pour les erreurs clients et 5xx pour les erreurs serveurs). Voici plusieurs exemples de requêtes invalides :\nErreur 401 \"Unauthorized\" : accès restreint. Tu ne disposes pas des accès vers cette page. Exemple : une photo sur Facebook que tu n'as pas l'autorisation de voir.\nErreur 404 \"Bad Request\" : la page n'existe pas. Tu essayes d'accèder à une page qui n'existe pas. Exemple avec cette page : google.com/lkdjf qui renvoie ce type d'erreur.\nErreur 503 \"Service Unavailable\" : le serveur n'arrive pas à répondre à la requête (probablement déconnecté)",
+    "Erreur 401 \"Unauthorized\" : accès restreint. Tu ne disposes pas des accès vers cette page. Exemple : une photo sur Facebook que tu n'as pas l'autorisation de voir.",
+    "Erreur 404 \"Bad Request\" : la page n'existe pas. Tu essayes d'accèder à une page qui n'existe pas. Exemple avec cette page : google.com/lkdjf qui renvoie ce type d'erreur.",
+    "Erreur 503 \"Service Unavailable\" : le serveur n'arrive pas à répondre à la requête (probablement déconnecté)",
+    "* Ce qu'on appelle \"Le client\" fait référence à n'importe quel outil faisant une requête vers le serveur. Cela peut être Safari sur iPhone X, Chrome sur ton ordinateur, ou encore les petits robots de Google qui indexent le web entier pour leur moteur de recherche. La métaphore est plutôt bien trouvée : le client fait une requête, et le serveur la sert, comme au restaurant !",
+    "Tu peux lire le célèbre papier écrit par Tim Berners-Lee pour le projet HyperText.",
+    "Et pour le plaisir, tu peux regarder l'épisode de C'est Pas Sorcier consacré à Internet. Il y en même un sur le sujet qui date de 1998. Retour dans le passé garanti !"
+  ]
+}

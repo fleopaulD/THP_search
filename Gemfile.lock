@@ -67,13 +67,20 @@ GEM
       minitest (>= 5.1)
       tzinfo (~> 2.0)
     builder (3.2.4)
+    childprocess (4.1.0)
     concurrent-ruby (1.1.9)
     crass (1.0.6)
     debug (1.4.0)
       irb (>= 1.3.6)
       reline (>= 0.2.7)
     digest (3.1.0)
+    dotenv (2.7.6)
+    dotenv-rails (2.7.6)
+      dotenv (= 2.7.6)
+      railties (>= 3.2)
     erubi (1.10.0)
+    faker (2.20.0)
+      i18n (>= 1.8.11, < 2)
     globalid (1.0.0)
       activesupport (>= 5.0)
     i18n (1.10.0)
@@ -145,6 +152,12 @@ GEM
     rake (13.0.6)
     reline (0.3.1)
       io-console (~> 0.5)
+    rexml (3.2.5)
+    rubyzip (2.3.2)
+    selenium-webdriver (4.1.0)
+      childprocess (>= 0.5, < 5.0)
+      rexml (~> 3.2, >= 3.2.5)
+      rubyzip (>= 1.2.2)
     sprockets (4.0.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -153,6 +166,7 @@ GEM
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
     strscan (3.0.1)
+    table_print (1.5.7)
     thor (1.2.1)
     timeout (0.2.0)
     tzinfo (2.0.4)
@@ -167,10 +181,14 @@ PLATFORMS
 
 DEPENDENCIES
   debug
+  dotenv-rails
+  faker
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.2, >= 7.0.2.2)
+  selenium-webdriver (~> 4.0)
   sprockets-rails
+  table_print
   tzinfo-data
 
 RUBY VERSION

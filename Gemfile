@@ -15,12 +15,24 @@ gem "pg", "~> 1.1"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
+# Scrap the web
+gem 'selenium-webdriver', '~> 4.0'
+
+# Print formated datas from database
+gem "table_print"
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+
+  # Manage credentials in .env file
+  gem 'dotenv-rails'
+
+  # Generate random datas
+  gem "faker"
 end
 
 group :development do
