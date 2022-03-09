@@ -57,17 +57,17 @@ class Scraper
     @driver.quit
   end
 
-  def get_all_articles(format="object")
+  def get_all_articles(format="JSON")
     login
     get_articles_urls
     self.all_articles_urls.each do |url|
       content = get_content(url)
       if format == "JSON"
-        doc_title = content[:title].delete('/').gsub(/ +/, '_')
-        File.open("./db/json/#{doc_title}.json", 'w') do |f|
+        new_json_file = Rails.root.join("db", "json", content[:title].delete('/').gsub(/ +/, '_') + ".json")
+        File.open(new_json_file, 'w') do |f|
           f.write JSON.generate(content, { array_nl: "\n", object_nl: "\n", indent: '  ' })
         end
-        puts "File \"./db/json/#{doc_title}.json\" writted."
+        puts "File #{new_json_file.to_s} written."
       end
     end
     kill
