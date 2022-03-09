@@ -2,7 +2,7 @@ class Scraper
   attr_accessor :driver, :all_articles_urls, :wait
 
   def initialize
-    options = Selenium::WebDriver::Firefox::Options.new # (args: ['-headless'])
+    options = Selenium::WebDriver::Firefox::Options.new (args: ['-headless'])
     @driver = Selenium::WebDriver.for(:firefox, options: options)
     @wait = Selenium::WebDriver::Wait.new(:timeout => 10)
     @all_articles_urls = []
