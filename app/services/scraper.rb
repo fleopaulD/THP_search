@@ -55,9 +55,10 @@ class Scraper
   
   def kill
     @driver.quit
+    puts "Driver killed."
   end
 
-  def get_all_articles(format="JSON")
+  def get_all_articles(format="")
     login
     get_articles_urls
     self.all_articles_urls.each do |url|
@@ -68,6 +69,8 @@ class Scraper
           f.write JSON.generate(content, { array_nl: "\n", object_nl: "\n", indent: '  ' })
         end
         puts "File #{new_json_file.to_s} written."
+      else
+
       end
     end
     kill
