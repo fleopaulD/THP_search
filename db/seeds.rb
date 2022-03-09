@@ -21,7 +21,8 @@ json_files.each_with_index do |f, index|
   article = JSON.parse(File.read(f))
   page = Page.create(
     url: article["url"],
-    signature: article["signature"]
+    signature: article["signature"],
+    title: article["title"]
   )
   Parser.new.cleanup_string(article["title"]).split do |word|
     word_in_db = Word.find_by(str: word)
