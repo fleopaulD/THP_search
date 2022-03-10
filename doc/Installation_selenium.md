@@ -2,7 +2,11 @@
 
 ## 1. Add to Gemfile
 
-`gem 'selenium-webdriver', '~> 4.0'`
+```
+# Scrap the web
+gem 'selenium-webdriver', '~> 4.0'`
+gem 'webdrivers'
+```
 
 ## 2. Installing Firefox
 
