@@ -22,4 +22,12 @@ module ApplicationHelper
     words
   end
 
+  def db_cleanup
+    STOPWORDS.each do |stopword|
+      word = Word.find_by(str: stopword)
+      word.destroy unless word.nil?
+    end
+    Word.all.each { |word| word.update(str: cleanup_string(word.str)) }
+  end
+
 end
