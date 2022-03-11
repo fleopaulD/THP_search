@@ -6,6 +6,8 @@ class SearchController < ApplicationController
   end
 
   def create
+    return unless params[:token] == ENV["API_USER_TOKEN"]
+
     @user_input = params[:query]
     cleaned_query = cleanup_string(params[:query])
     @results = []
@@ -26,5 +28,13 @@ class SearchController < ApplicationController
 
     @results = @results.flatten.uniq.delete_if { |page| page.nil? }
     end
+
+    response = {}
+    response["query"] = @user_input
+    response["results"] = []
+    @results.each do |result|
+      response["results"] << {result.title => result.url}
+    end
+    render json: response
   end
 end
