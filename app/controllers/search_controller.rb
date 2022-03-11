@@ -11,12 +11,20 @@ class SearchController < ApplicationController
     @results = []
     
     unless cleaned_query.empty?
-      cleaned_query.split.each do |word|
-        @results << Word.where("str LIKE '%#{word}%'").collect {|a| a.titles.collect { |b| b.page }}
+      words_in_query = cleaned_query.split
+      words_in_db = words_in_query.map { |word| Word.where("str LIKE '%#{word}%'") }.flatten
+
+      words_in_db.each do |word|
+        @results << word.titles.map { |a| a.page }
       end
-      cleaned_query.split.each do |word|
-        @results << Word.where("str LIKE '%#{word}%'").collect {|a| a.subheadings.collect { |b| b.page }}
+      words_in_db.each do |word|
+        @results << word.subheadings.map { |a| a.page }
       end
+      words_in_db.each do |word|
+        @results << word.contents.sort_by(&:occurences).reverse.map { |a| a.page }
+      end
+
     @results = @results.flatten.uniq.delete_if { |page| page.nil? }
+    end
   end
 end
