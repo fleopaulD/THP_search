@@ -15,7 +15,7 @@ class SearchController < ApplicationController
     response["results"] = []
     
     @results.each do |result|
-      response["results"] << {result.title => result.url}
+      response["results"] << {title: result.title, url: result.url}
     end
     response
   end
