@@ -1,6 +1,6 @@
 class SearchController < ApplicationController
   
-  def create
+  def new
     return unless params[:token] == ENV["API_USER_TOKEN"]
     @user_input = params[:query]
     @results = SearchEngine.new.perform(params[:query])
