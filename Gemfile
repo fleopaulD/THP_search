@@ -17,6 +17,7 @@ gem "puma", "~> 5.0"
 
 # Scrap the web
 gem 'selenium-webdriver', '~> 4.0'
+gem 'webdrivers'
 
 # Print formated datas from database
 gem "table_print"

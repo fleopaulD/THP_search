@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_09_083226) do
+ActiveRecord::Schema[7.0].define(version: 2022_03_11_104259) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "contents", force: :cascade do |t|
-    t.integer "count"
+    t.integer "occurences"
     t.bigint "word_id"
     t.bigint "page_id"
     t.index ["page_id"], name: "index_contents_on_page_id"

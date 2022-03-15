@@ -1,20 +1,22 @@
 class SearchController < ApplicationController
   
-  include ApplicationHelper
-
   def new
+    return unless params[:token] == ENV["API_USER_TOKEN"]
+    @user_input = params[:query]
+    @results = SearchEngine.new.perform(params[:query])
+    render json: valid_response
   end
 
-  def create
-    @user_input = params[:query]
-    cleaned_query = cleanup_string(params[:query])
-    @results = nil
+  private
+
+  def valid_response
+    response = Hash.new
+    response["query"] = @user_input
+    response["results"] = []
     
-    unless cleaned_query.empty?
-      puts "#"*200
-      puts "Cleaned query = #{cleaned_query}"
-      @word = Word.find_by("str LIKE '%#{cleanup_string(params[:query])}%'")
-      @results = @word.pages unless @word.nil?
+    @results.each do |result|
+      response["results"] << {title: result.title, url: result.url}
     end
+    response
   end
 end
