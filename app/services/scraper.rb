@@ -1,4 +1,6 @@
 class Scraper
+  require 'digest'
+
   attr_accessor :driver, :all_articles_urls, :wait
 
   def initialize
@@ -43,7 +45,7 @@ class Scraper
       raw_page = self.driver.find_element(:class_name, "card")
       article[:title] = raw_page.find_element(:class_name, "card-title").text
       article[:url] = url
-      article[:signature] = raw_page.text.hash.to_s
+      article[:signature] = Digest::MD5.hexdigest(raw_page.text)
       article[:subheadings] = raw_page.find_elements(css: ".card-body h2, .card-body h3, .card-body h4, .card-body h5").map { |a| a.text }
       article[:contents] = raw_page.find_elements(css: ".card-body p, .card-body li").map { |a| a.text }
     rescue => exception
