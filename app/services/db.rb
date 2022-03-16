@@ -66,7 +66,7 @@ class Db
       end
       puts "contents=OK"
 
-      break if index + 1 >= limit
+      break if index + 1 == limit
     end
     puts "Process done."
     scraper.kill
