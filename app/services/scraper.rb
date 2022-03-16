@@ -60,21 +60,4 @@ class Scraper
     puts "Driver killed."
   end
 
-  def get_all_articles(format="")
-    login
-    get_articles_urls
-    self.all_articles_urls.each do |url|
-      content = get_content(url)
-      if format == "JSON"
-        new_json_file = Rails.root.join("db", "json", content[:title].delete('/').gsub(/ +/, '_') + ".json")
-        File.open(new_json_file, 'w') do |f|
-          f.write JSON.generate(content, { array_nl: "\n", object_nl: "\n", indent: '  ' })
-        end
-        puts "File #{new_json_file.to_s} written."
-      else
-
-      end
-    end
-    kill
-  end
 end
