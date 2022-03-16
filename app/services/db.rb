@@ -61,7 +61,7 @@ class Db
         Content.create(
           page: page,
           word: word_in_db,
-          count: value
+          occurences: value
         )
       end
       puts "contents=OK"
