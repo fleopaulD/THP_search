@@ -1,5 +1,8 @@
 # A simple Search Engine for "The Hacking Project" platform
+**My final project for [CS50](https://cs50.harvard.edu/x/2022/)**
+
 >Allows you to easily find a course from the French programming school [The Hacking Project](https://www.thehackingproject.org/). Enter one or more keywords in the dedicated web extension and you have the resources!
+
 #### Video Demo: [Youtube link](https://youtu.be/K4DKHVITykY)
 
 **Table of content**
